@@ -9,7 +9,7 @@
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
 
-  <name>A Camel Route</name>
+  <name>BloomFilter</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,57 +17,13 @@
     <log4j2-version>2.19.0</log4j2-version>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <!-- Camel BOM -->
-      <dependency>
-        <groupId>org.apache.camel</groupId>
-        <artifactId>camel-bom</artifactId>
-        <version>4.0.0-M3</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-
-    </dependencies>
-  </dependencyManagement>
-
   <dependencies>
-
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-main</artifactId>
-    </dependency>
-
     <dependency>
       <groupId>com.sangupta</groupId>
       <artifactId>murmur</artifactId>
       <version>1.0.0</version>
     </dependency>
 
-    <!-- logging -->
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-slf4j2-impl</artifactId>
-      <scope>runtime</scope>
-      <version>${log4j2-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>${log4j2-version}</version>
-      <scope>runtime</scope>
-    </dependency>
-
-    <!-- testing -->
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-test-main-junit5</artifactId>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>
@@ -90,18 +46,6 @@
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
-
-      <!-- Allows the example to be run via 'mvn camel:run' -->
-      <plugin>
-        <groupId>org.apache.camel</groupId>
-        <artifactId>camel-maven-plugin</artifactId>
-        <version>4.0.0-M3</version>
-        <configuration>
-          <logClasspath>true</logClasspath>
-          <mainClass>org.example.MainApp</mainClass>
-        </configuration>
-      </plugin>
-
     </plugins>
   </build>
 
